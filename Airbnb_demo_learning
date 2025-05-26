@@ -66,12 +66,12 @@ GROUP BY
     room_type;
 
 
---6) estimate the potential revenue per listing assuming 50% occupancy rate for each available day
+--7) estimate the potential revenue per listing assuming 50% occupancy rate for each available day
 select *, 
 	 price * (availability_365 * 0.5) as estimated_revenue
  from airbnb_sydney;
 
---7) which listings have more than 50 reviews and an average of more than 2 reviews per month?
+--8) which listings have more than 50 reviews and an average of more than 2 reviews per month?
 SELECT
 * 
  FROM 
@@ -79,7 +79,7 @@ SELECT
 WHERE number_of_reviews > 50
 AND reviews_per_month > 2;
 
---8) which neighbourhood has the highest average price for “Entire home/apt”?
+--9) which neighbourhood has the highest average price for “Entire home/apt”?
 SELECT top 1 
 neighbourhood,
 avg(price) as average_price
